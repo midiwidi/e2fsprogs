@@ -27,7 +27,7 @@ void init_resource_track(struct resource_track *track, const char *desc,
 	io_stats io_start = 0;
 
 	track->desc = desc;
-	track->brk_start = sbrk(0);
+	track->brk_start = (0);
 	gettimeofday(&track->time_start, 0);
 #ifdef HAVE_GETRUSAGE
 #ifdef sun
@@ -85,7 +85,7 @@ void print_resource_track(ext2_resize_t rfs, struct resource_track *track,
 		kbytes(malloc_info.uordblks), kbytes(malloc_info.fordblks));
 #else
 	printf("Memory used: %lu, ",
-		(unsigned long) (((char *) sbrk(0)) -
+		(unsigned long) (((char *) (0)) -
 				 ((char *) track->brk_start)));
 #endif
 #ifdef HAVE_GETRUSAGE

@@ -228,7 +228,7 @@ static FILE *save_output(const char *s0, const char *s1, const char *s2)
 		exit(1);
 	}
 
-	pid = fork();
+	pid = vfork();
 	if (pid < 0) {
 		perror("fork");
 		exit(1);

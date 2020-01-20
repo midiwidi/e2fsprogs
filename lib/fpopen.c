@@ -94,7 +94,7 @@ FILE *fpopen(const char *cmd, const char *mode)
 		return NULL;
 
 	/* Fork and execute the correct program. */
-	if ((pid = fork()) < 0) {
+	if ((pid = vfork()) < 0) {
 		perror("fork");
 		return NULL;
 	} else if (pid == 0) {

@@ -65,7 +65,7 @@ static void create_daemon(void)
 	pid_t pid;
 	uid_t euid;
 
-	pid = fork();
+	pid = vfork();
 	if (pid == -1) {
 		perror("fork");
 		exit(1);

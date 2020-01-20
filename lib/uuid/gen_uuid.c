@@ -525,7 +525,7 @@ static int get_uuid_via_daemon(int op, uuid_t out, int *num)
 		if (access_ret == 0 && (st.st_mode & (S_ISUID | S_ISGID)) == 0)
 			access_ret = access(UUIDD_DIR, W_OK);
 		if (access_ret == 0 && start_attempts++ < 5) {
-			if ((pid = fork()) == 0) {
+			if ((pid = vfork()) == 0) {
 				close_all_fds();
 				execl(uuidd_path, "uuidd", "-qT", "300",
 				      (char *) NULL);

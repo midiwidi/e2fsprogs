@@ -103,7 +103,7 @@ void ss_help(int argc, char const * const *argv, int sci_idx, pointer info_ptr)
 	free(buf);
 	return;
     }
-    switch (child = fork()) {
+    switch (child = vfork()) {
     case -1:
 	ss_perror(sci_idx, errno, "Can't fork for pager");
 	(void) close(fd);

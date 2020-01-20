@@ -137,7 +137,7 @@ struct dx_dirblock_info {
 
 struct encrypted_file_info;
 
-#define RESOURCE_TRACK
+//#define RESOURCE_TRACK
 
 #ifdef RESOURCE_TRACK
 /*

@@ -521,7 +521,7 @@ int main(int argc, char **argv)
 			}
 
 			for (i = 0; i < nproc; i++) {
-				if (fork() == 0) {
+				if (vfork() == 0) {
 
 					action.sa_handler = SIG_DFL;
 					sigemptyset(&action.sa_mask);

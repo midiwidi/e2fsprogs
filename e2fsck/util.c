@@ -380,7 +380,7 @@ void init_resource_track(struct resource_track *track, io_channel channel)
 #endif
 	io_stats io_start = 0;
 
-	track->brk_start = sbrk(0);
+	track->brk_start = (0);
 	gettimeofday(&track->time_start, 0);
 #ifdef HAVE_GETRUSAGE
 #ifdef sun
@@ -446,7 +446,7 @@ void print_resource_track(e2fsck_t ctx, const char *desc,
 		kbytes(malloc_info.uordblks), kbytes(malloc_info.fordblks));
 #else
 	log_out(ctx, _("Memory used: %lu, "),
-		(unsigned long) (((char *) sbrk(0)) -
+		(unsigned long) (((char *) (0)) -
 				 ((char *) track->brk_start)));
 #endif
 #ifdef HAVE_GETRUSAGE

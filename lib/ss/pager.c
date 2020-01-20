@@ -80,7 +80,7 @@ int ss_pager_create(void)
 	if (pipe(filedes) != 0)
 		return(-1);
 
-	switch(fork()) {
+	switch(vfork()) {
 	case -1:
 		return(-1);
 	case 0:
